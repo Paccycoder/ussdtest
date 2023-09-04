@@ -20,16 +20,15 @@ def registerussd(request):
         phone_number = request.POST.get('phoneNumber')
         text = request.POST.get('text')
         response = ""
-        if  text == "":
-            response = "CON Murakaza neza kurubuga rw'abahinzi Smart Ikigega \n"
-            response += "1.iyandikishe \n"
-            response += "2.Kugurisha umusaruro \n"
-            response += "3.kugura umusaruro \n"
-            response += "4.kubika umusaruro\n"
-            response += "5.kwishyura umuhinzi\n"
-            response += "6.Kuguza amafaranga"
-        elif text == "1":
-            response = "CON Andika amazina yawe \n"
+        if text == "":
+            response = "CON Hello, this PacDev community:\n"
+            response += " 1.More Information\n"
+            response += " 2.Register\n"
+            response += " 3.Join community \n"
+        elif text == '1':
+            response = "CON More Information\n"
+            response += " 1.View Detail\n"
+            response += " 2.Join community \n"
         print(response)
         return HttpResponse(response)
     return HttpResponse('Thanks for registration')
